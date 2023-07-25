@@ -6,7 +6,11 @@ obsolete model slide.slide.link
 
 ---Fields in module 'website_slides'---
 website_slides / slide.channel            / cover_properties (text)       : NEW hasdefault: default
+# NOTHING TO DO
+
 website_slides / slide.channel            / nbr_article (integer)         : NEW isfunction: function, stored
+# DONE: manually create column for avoiding the automatic launch of the compute or default in pre-migration and fill value in post-migration
+
 website_slides / slide.channel            / nbr_presentation (integer)    : DEL
 website_slides / slide.channel            / nbr_webpage (integer)         : DEL
 website_slides / slide.channel            / share_channel_template_id (many2one): NEW relation: mail.template, hasdefault: default
@@ -31,7 +35,11 @@ website_slides / slide.slide              / embedcount_ids (one2many)     : DEL 
 
 website_slides / slide.slide              / link_ids (one2many)           : DEL relation: slide.slide.link
 website_slides / slide.slide              / mime_type (char)              : DEL
+# NOTHING TO DO
+
 website_slides / slide.slide              / nbr_article (integer)         : NEW isfunction: function, stored
+# DONE: manually create column for avoiding the automatic launch of the compute or default in pre-migration and fill value in post-migration
+
 website_slides / slide.slide              / nbr_presentation (integer)    : DEL
 website_slides / slide.slide              / nbr_webpage (integer)         : DEL
 

@@ -98,6 +98,30 @@ def create_column_and_migrate_data_from_slide_link_to_slide_resource(env):
     )
 
 
+def _create_nbr_article_on_slide_channel(env):
+    # Manually create column for avoiding the automatic launch of the compute or default
+    # Fill value in post-migration
+    openupgrade.logged_query(
+        env.cr,
+        """
+        ALTER TABLE slide_channel
+        ADD COLUMN IF NOT EXISTS nbr_article INTEGER
+        """,
+    )
+
+
+def _create_nbr_article_on_slide_slide(env):
+    # Manually create column for avoiding the automatic launch of the compute or default
+    # Fill value in post-migration
+    openupgrade.logged_query(
+        env.cr,
+        """
+        ALTER TABLE slide_slide
+        ADD COLUMN IF NOT EXISTS nbr_article INTEGER
+        """,
+    )
+
+
 @openupgrade.migrate()
 def migrate(env, version):
     openupgrade.rename_fields(env, renamed_fields)
@@ -105,3 +129,5 @@ def migrate(env, version):
     create_and_fill_data_from_slide_type_to_slide_category(env)
     create_column_and_migrate_data_from_slide_link_to_slide_resource(env)
     create_and_fill_data_for_source_type(env)
+    _create_nbr_article_on_slide_channel(env)
+    _create_nbr_article_on_slide_slide(env)
