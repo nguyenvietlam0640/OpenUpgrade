@@ -8,9 +8,9 @@ def _fill_values_on_slide_slide(env):
 
 
 def _fill_nbr_article_on_slide_channel(env):
-    env["slide.channel"].with_context(
-        active_test=False
-    ).search([])._compute_slides_statistics()
+    env["slide.channel"].with_context(active_test=False).search(
+        []
+    )._compute_slides_statistics()
 
 
 @openupgrade.migrate()
