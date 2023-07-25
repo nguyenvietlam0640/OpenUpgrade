@@ -9,7 +9,7 @@ website_slides / slide.channel            / cover_properties (text)       : NEW 
 # NOTHING TO DO
 
 website_slides / slide.channel            / nbr_article (integer)         : NEW isfunction: function, stored
-# DONE: manually create column for avoiding the automatic launch of the compute or default in pre-migration and fill value in post-migration
+# DONE: manually create column for avoiding the automatic launch of the compute or default in pre-migration and fill value in end-migration
 
 website_slides / slide.channel            / nbr_presentation (integer)    : DEL
 website_slides / slide.channel            / nbr_webpage (integer)         : DEL
@@ -38,7 +38,7 @@ website_slides / slide.slide              / mime_type (char)              : DEL
 # NOTHING TO DO
 
 website_slides / slide.slide              / nbr_article (integer)         : NEW isfunction: function, stored
-# DONE: manually create column for avoiding the automatic launch of the compute or default in pre-migration and fill value in post-migration
+# DONE: manually create column for avoiding the automatic launch of the compute or default in pre-migration and fill value in end-migration
 
 website_slides / slide.slide              / nbr_presentation (integer)    : DEL
 website_slides / slide.slide              / nbr_webpage (integer)         : DEL
