@@ -2,7 +2,7 @@ from openupgradelib import openupgrade
 
 
 def recompute_slide_type(env):
-    env["slide.slide"].search([])._compute_slide_type()
+    env["slide.slide"].with_context(active_test=False).search([])._compute_slide_type()
 
 
 @openupgrade.migrate()
