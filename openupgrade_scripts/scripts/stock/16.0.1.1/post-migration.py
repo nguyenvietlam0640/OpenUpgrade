@@ -49,6 +49,7 @@ def _complete_stock_move_quantity_done_with_orm(env):
         """
         SELECT move_id
         FROM stock_move_line
+        WHERE state != 'cancel'
         GROUP BY move_id
         HAVING COUNT(DISTINCT product_uom_id) > 1
             AND SUM(qty_done) <> 0
