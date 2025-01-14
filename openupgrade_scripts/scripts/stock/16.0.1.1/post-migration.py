@@ -17,7 +17,7 @@ def _handle_multi_location_visibility(env):
             "stock.stock_location_view_tree2_editable",
             "stock.stock_location_view_form_editable",
         ):
-            view = (env.ref(xml_id, raise_if_not_found=False),)
+            view = env.ref(xml_id, raise_if_not_found=False)
             if view:
                 view.active = False
 
